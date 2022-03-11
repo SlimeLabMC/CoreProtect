@@ -127,7 +127,7 @@
     <dependency>
       <groupId>com.meowj</groupId>
       <artifactId>LangUtils</artifactId>
-      <!--Please check the latest version -->
+      <scope>provided</scope>
       <version>2.6-SNAPSHOT</version>
     </dependency>
   </dependencies>
