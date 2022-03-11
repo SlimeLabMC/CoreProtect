@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Locale;
 
+import com.meowj.langutils.lang.LanguageHelper;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.CommandSender;
@@ -14,6 +15,7 @@ import net.coreprotect.language.Phrase;
 import net.coreprotect.language.Selector;
 import net.coreprotect.utility.Color;
 import net.coreprotect.utility.Util;
+import org.bukkit.inventory.ItemStack;
 
 public class InteractionLookup {
 
@@ -96,10 +98,10 @@ public class InteractionLookup {
                 if (resultMaterial == null) {
                     resultMaterial = Material.AIR;
                 }
-                String target = resultMaterial.name().toLowerCase(Locale.ROOT);
-                target = Util.nameFilter(target, resultData);
+                String target = LanguageHelper.getItemDisplayName(new ItemStack(resultMaterial), "zh_tw"); //resultMaterial.name().toLowerCase(Locale.ROOT);
+                //target = Util.nameFilter(target, resultData);
                 if (target.length() > 0) {
-                    target = "minecraft:" + target.toLowerCase(Locale.ROOT) + "";
+                    target = "minecraft:" + target + ""; //target.toLowerCase(Locale.ROOT) + "";
                 }
 
                 // Hide "minecraft:" for now.

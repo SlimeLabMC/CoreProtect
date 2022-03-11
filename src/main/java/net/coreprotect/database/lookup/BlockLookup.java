@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Locale;
 
+import com.meowj.langutils.lang.LanguageHelper;
 import org.bukkit.Material;
 import org.bukkit.block.BlockState;
 import org.bukkit.command.CommandSender;
@@ -14,6 +15,7 @@ import net.coreprotect.language.Phrase;
 import net.coreprotect.language.Selector;
 import net.coreprotect.utility.Color;
 import net.coreprotect.utility.Util;
+import org.bukkit.inventory.ItemStack;
 
 public class BlockLookup {
 
@@ -117,8 +119,8 @@ public class BlockLookup {
                     if (resultMaterial == null) {
                         resultMaterial = Material.AIR;
                     }
-                    target = Util.nameFilter(resultMaterial.name().toLowerCase(Locale.ROOT), resultData);
-                    target = "minecraft:" + target.toLowerCase(Locale.ROOT);
+                    target = LanguageHelper.getItemDisplayName(new ItemStack(resultMaterial), "zh_tw"); //Util.nameFilter(resultMaterial.name().toLowerCase(Locale.ROOT), resultData);
+                    target = "minecraft:" + target; //.toLowerCase(Locale.ROOT);
                 }
                 if (target.length() > 0) {
                     target = "" + target + "";
