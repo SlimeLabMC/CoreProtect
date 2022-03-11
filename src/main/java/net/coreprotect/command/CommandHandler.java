@@ -647,8 +647,8 @@ public class CommandHandler implements CommandExecutor {
                                         restricted.add(i3_material);
                                     }
                                     else {
-                                        Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.INVALID_INCLUDE, i3));
-                                        // Functions.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.MISSING_PARAMETERS, "/co help include"));
+                                        Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.INVALID_INCLUDE, i3));
+                                        // Functions.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.MISSING_PARAMETERS, "/co help include"));
                                         return null;
                                     }
                                 }
@@ -679,8 +679,8 @@ public class CommandHandler implements CommandExecutor {
                                     restricted.add(material);
                                 }
                                 else {
-                                    Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.INVALID_INCLUDE, argument));
-                                    // Functions.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.MISSING_PARAMETERS, "/co help include"));
+                                    Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.INVALID_INCLUDE, argument));
+                                    // Functions.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.MISSING_PARAMETERS, "/co help include"));
                                     return null;
                                 }
                             }
@@ -1238,11 +1238,11 @@ public class CommandHandler implements CommandExecutor {
                     ConsumerCommand.runCommand(user, permission, argumentArray);
                 }
                 else {
-                    Chat.sendMessage(user, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.COMMAND_NOT_FOUND, Color.WHITE, "/co " + corecommand));
+                    Chat.sendMessage(user, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.COMMAND_NOT_FOUND, Color.WHITE, "/co " + corecommand));
                 }
             }
             else {
-                Chat.sendMessage(user, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.MISSING_PARAMETERS, Color.WHITE, "/co <parameters>"));
+                Chat.sendMessage(user, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.MISSING_PARAMETERS, Color.WHITE, "/co <parameters>"));
             }
 
             if (user.isOp() && versionAlert.get(user.getName()) == null) {

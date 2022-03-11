@@ -23,7 +23,7 @@ public class StatusCommand {
 
     protected static void runCommand(CommandSender player, boolean permission, String[] args) {
         if (!permission) {
-            Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.NO_PERMISSION));
+            Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.NO_PERMISSION));
             return;
         }
 
@@ -42,7 +42,7 @@ public class StatusCommand {
                         }
                     }
 
-                    Chat.sendMessage(player, Color.WHITE + "----- " + Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "-----");
+                    Chat.sendMessage(player, Color.WHITE + "----- " + Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "-----");
                     Chat.sendMessage(player, Color.DARK_AQUA + Phrase.build(Phrase.STATUS_VERSION, Color.WHITE, ConfigHandler.EDITION_NAME + " v" + pdfFile.getVersion() + ".") + versionCheck);
 
                     String donationKey = NetworkHandler.donationKey();

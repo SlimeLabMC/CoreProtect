@@ -72,7 +72,7 @@ public final class PlayerInteractListener extends Queue implements Listener {
         }
 
         if (!player.hasPermission("coreprotect.inspect")) {
-            Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.NO_PERMISSION));
+            Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.NO_PERMISSION));
             ConfigHandler.inspecting.put(player.getName(), false);
             return;
         }
@@ -103,17 +103,17 @@ public final class PlayerInteractListener extends Queue implements Listener {
                 @Override
                 public void run() {
                     if (ConfigHandler.converterRunning) {
-                        player.sendMessage(Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
+                        player.sendMessage(Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
                         return;
                     }
                     if (ConfigHandler.purgeRunning) {
-                        player.sendMessage(Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
+                        player.sendMessage(Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
                         return;
                     }
                     if (ConfigHandler.lookupThrottle.get(player.getName()) != null) {
                         Object[] lookupThrottle = ConfigHandler.lookupThrottle.get(player.getName());
                         if ((boolean) lookupThrottle[0] || (System.currentTimeMillis() - (long) lookupThrottle[1]) < 100) {
-                            player.sendMessage(Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                            player.sendMessage(Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                             return;
                         }
                     }
@@ -143,7 +143,7 @@ public final class PlayerInteractListener extends Queue implements Listener {
                             }
                         }
                         else {
-                            player.sendMessage(Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                            player.sendMessage(Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                         }
                     }
                     catch (Exception e) {
@@ -199,19 +199,19 @@ public final class PlayerInteractListener extends Queue implements Listener {
                             @Override
                             public void run() {
                                 if (ConfigHandler.converterRunning) {
-                                    Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
+                                    Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
                                     return;
                                 }
 
                                 if (ConfigHandler.purgeRunning) {
-                                    Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
+                                    Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
                                     return;
                                 }
 
                                 if (ConfigHandler.lookupThrottle.get(player.getName()) != null) {
                                     Object[] lookupThrottle = ConfigHandler.lookupThrottle.get(player.getName());
                                     if ((boolean) lookupThrottle[0] || (System.currentTimeMillis() - (long) lookupThrottle[1]) < 100) {
-                                        Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                                        Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                                         return;
                                     }
                                 }
@@ -239,7 +239,7 @@ public final class PlayerInteractListener extends Queue implements Listener {
                                         statement.close();
                                     }
                                     else {
-                                        Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                                        Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                                     }
                                 }
                                 catch (Exception e) {
@@ -281,19 +281,19 @@ public final class PlayerInteractListener extends Queue implements Listener {
                             @Override
                             public void run() {
                                 if (ConfigHandler.converterRunning) {
-                                    Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
+                                    Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
                                     return;
                                 }
 
                                 if (ConfigHandler.purgeRunning) {
-                                    Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
+                                    Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
                                     return;
                                 }
 
                                 if (ConfigHandler.lookupThrottle.get(player.getName()) != null) {
                                     Object[] lookupThrottle = ConfigHandler.lookupThrottle.get(player.getName());
                                     if ((boolean) lookupThrottle[0] || (System.currentTimeMillis() - (long) lookupThrottle[1]) < 100) {
-                                        Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                                        Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                                         return;
                                     }
                                 }
@@ -317,7 +317,7 @@ public final class PlayerInteractListener extends Queue implements Listener {
                                         statement.close();
                                     }
                                     else {
-                                        Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                                        Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                                     }
                                 }
                                 catch (Exception e) {
@@ -350,17 +350,17 @@ public final class PlayerInteractListener extends Queue implements Listener {
                             @Override
                             public void run() {
                                 if (ConfigHandler.converterRunning) {
-                                    Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
+                                    Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
                                     return;
                                 }
                                 if (ConfigHandler.purgeRunning) {
-                                    Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
+                                    Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
                                     return;
                                 }
                                 if (ConfigHandler.lookupThrottle.get(player.getName()) != null) {
                                     Object[] lookupThrottle = ConfigHandler.lookupThrottle.get(player.getName());
                                     if ((boolean) lookupThrottle[0] || (System.currentTimeMillis() - (long) lookupThrottle[1]) < 100) {
-                                        Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                                        Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                                         return;
                                     }
                                 }
@@ -384,7 +384,7 @@ public final class PlayerInteractListener extends Queue implements Listener {
                                         statement.close();
                                     }
                                     else {
-                                        Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                                        Chat.sendMessage(player, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                                     }
                                 }
                                 catch (Exception e) {
@@ -429,19 +429,19 @@ public final class PlayerInteractListener extends Queue implements Listener {
                             @Override
                             public void run() {
                                 if (ConfigHandler.converterRunning) {
-                                    Chat.sendMessage(finalPlayer, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
+                                    Chat.sendMessage(finalPlayer, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.UPGRADE_IN_PROGRESS));
                                     return;
                                 }
 
                                 if (ConfigHandler.purgeRunning) {
-                                    Chat.sendMessage(finalPlayer, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
+                                    Chat.sendMessage(finalPlayer, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.PURGE_IN_PROGRESS));
                                     return;
                                 }
 
                                 if (ConfigHandler.lookupThrottle.get(finalPlayer.getName()) != null) {
                                     Object[] lookupThrottle = ConfigHandler.lookupThrottle.get(finalPlayer.getName());
                                     if ((boolean) lookupThrottle[0] || (System.currentTimeMillis() - (long) lookupThrottle[1]) < 100) {
-                                        Chat.sendMessage(finalPlayer, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                                        Chat.sendMessage(finalPlayer, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                                         return;
                                     }
                                 }
@@ -478,7 +478,7 @@ public final class PlayerInteractListener extends Queue implements Listener {
                                         statement.close();
                                     }
                                     else {
-                                        Chat.sendMessage(finalPlayer, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                                        Chat.sendMessage(finalPlayer, Color.DARK_AQUA + "方塊紀錄 " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
                                     }
                                 }
                                 catch (Exception e) {
