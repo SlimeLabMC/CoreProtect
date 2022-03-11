@@ -56,7 +56,7 @@ public final class CoreProtect extends JavaPlugin {
         ConfigHandler.path = this.getDataFolder().getPath() + File.separator;
         Language.loadPhrases();
 
-        boolean start = performVersionChecks();
+        boolean start = true; //performVersionChecks();
         if (start) {
             try {
                 Consumer.initialize(); // Prepare consumer (keep this here)
