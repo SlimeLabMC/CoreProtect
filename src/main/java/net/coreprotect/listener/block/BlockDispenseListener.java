@@ -28,7 +28,7 @@ import net.coreprotect.thread.CacheHandler;
 
 public final class BlockDispenseListener extends Queue implements Listener {
 
-    @EventHandler(priority = EventPriority.MONITOR)
+   //@EventHandler(priority = EventPriority.MONITOR)
     protected void onBlockDispense(BlockDispenseEvent event) {
         Block block = event.getBlock();
         World world = block.getWorld();

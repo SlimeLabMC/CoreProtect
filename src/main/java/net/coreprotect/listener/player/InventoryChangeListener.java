@@ -305,7 +305,7 @@ public final class InventoryChangeListener extends Queue implements Listener {
         onInventoryInteractAsync(player, event.getInventory(), enderChest);
     }
 
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    //@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     protected void onInventoryMoveItemEvent(InventoryMoveItemEvent event) {
         if (event.isCancelled()) {
             return;
