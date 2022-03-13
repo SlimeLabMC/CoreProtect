@@ -17,7 +17,7 @@ import net.coreprotect.thread.CacheHandler;
 
 public final class BlockFertilizeListener extends Queue implements Listener {
 
-    @EventHandler
+    //@EventHandler
     protected void onBlockFertilize(BlockFertilizeEvent event) {
         if (event.isCancelled()) {
             return;

@@ -17,7 +17,7 @@ import net.coreprotect.utility.Util;
 
 public final class BlockFormListener extends Queue implements Listener {
 
-    @EventHandler(priority = EventPriority.MONITOR)
+    //@EventHandler(priority = EventPriority.MONITOR)
     protected void onBlockForm(BlockFormEvent event) {
         // random form, snow/ice
         World world = event.getBlock().getWorld();

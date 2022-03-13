@@ -189,7 +189,7 @@ public final class CraftItemListener extends Queue implements Listener {
         }
     }
 
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    //@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     protected void onCraftItem(CraftItemEvent event) {
         playerCraftItem(event, false);
     }

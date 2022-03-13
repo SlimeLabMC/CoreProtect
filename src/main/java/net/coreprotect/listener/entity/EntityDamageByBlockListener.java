@@ -20,7 +20,7 @@ import net.coreprotect.listener.player.PlayerInteractEntityListener;
 
 public final class EntityDamageByBlockListener extends Queue implements Listener {
 
-    @EventHandler(priority = EventPriority.MONITOR)
+    //@EventHandler(priority = EventPriority.MONITOR)
     protected void onEntityDamageByBlock(EntityDamageByBlockEvent event) {
         Entity entity = event.getEntity();
         if (!(entity instanceof ItemFrame) && !(entity instanceof ArmorStand) && !(entity instanceof EnderCrystal)) {

@@ -21,7 +21,7 @@ import net.coreprotect.consumer.Queue;
 
 public final class EntityChangeBlockListener extends Queue implements Listener {
 
-    @EventHandler(priority = EventPriority.MONITOR)
+    //@EventHandler(priority = EventPriority.MONITOR)
     protected void onEntityChangeBlock(EntityChangeBlockEvent event) {
         World world = event.getBlock().getWorld();
         if (!event.isCancelled() && Config.getConfig(world).ENTITY_CHANGE) {

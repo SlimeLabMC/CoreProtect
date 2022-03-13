@@ -25,7 +25,7 @@ import net.coreprotect.utility.Util;
 
 public final class CreatureSpawnListener extends Queue implements Listener {
 
-    @EventHandler
+    //@EventHandler
     public void onCreatureSpawn(CreatureSpawnEvent event) {
         if (event.isCancelled() || !event.getEntityType().equals(EntityType.ARMOR_STAND)) {
             return;
