@@ -139,7 +139,7 @@ public class Language {
         phrases.put(Phrase.LOOKUP_INTERACTION, "{0} {點擊了|殺死了} {1}");
         phrases.put(Phrase.LOOKUP_ITEM, "{0} {撿起了|丟棄了} {1} {2}");
         phrases.put(Phrase.LOOKUP_LOGIN, "{0} logged {in|out}");
-        phrases.put(Phrase.LOOKUP_PAGE, "第 {0} 頁 可使用 /co l <頁數> 來切換頁數");
+        phrases.put(Phrase.LOOKUP_PAGE, "第 {0} 頁");
         phrases.put(Phrase.LOOKUP_PROJECTILE, "{0} {丟|射} {1} {2}");
         phrases.put(Phrase.LOOKUP_ROWS_FOUND, "找到 {0} {行|行}");
         phrases.put(Phrase.LOOKUP_SEARCHING, "資料搜尋中 請稍後...");

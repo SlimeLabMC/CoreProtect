@@ -55,28 +55,29 @@ public final class CoreProtect extends JavaPlugin {
         ConfigHandler.path = this.getDataFolder().getPath() + File.separator;
         Language.loadPhrases();
 
-        boolean start = true; //performVersionChecks();
-        if (start) {
-            try {
-                Consumer.initialize(); // Prepare consumer (keep this here)
-                new ListenerHandler(this);
-                getCommand("coreprotect").setExecutor(CommandHandler.getInstance());
-                getCommand("coreprotect").setTabCompleter(new TabHandler());
-                getCommand("core").setExecutor(CommandHandler.getInstance());
-                getCommand("core").setTabCompleter(new TabHandler());
-                getCommand("co").setExecutor(CommandHandler.getInstance());
-                getCommand("co").setTabCompleter(new TabHandler());
+        boolean start; //performVersionChecks();
+        String[] bukkitVersion = Bukkit.getServer().getBukkitVersion().split("[-.]");
+        ConfigHandler.SERVER_VERSION = Integer.parseInt(bukkitVersion[1]);
 
-                boolean exists = (new File(ConfigHandler.path)).exists();
-                if (!exists) {
-                    new File(ConfigHandler.path).mkdir();
-                }
-                start = ConfigHandler.performInitialization(true); // Perform any necessary initialization
+        try {
+            Consumer.initialize(); // Prepare consumer (keep this here)
+            new ListenerHandler(this);
+            getCommand("coreprotect").setExecutor(CommandHandler.getInstance());
+            getCommand("coreprotect").setTabCompleter(new TabHandler());
+            getCommand("core").setExecutor(CommandHandler.getInstance());
+            getCommand("core").setTabCompleter(new TabHandler());
+            getCommand("co").setExecutor(CommandHandler.getInstance());
+            getCommand("co").setTabCompleter(new TabHandler());
+
+            boolean exists = (new File(ConfigHandler.path)).exists();
+            if (!exists) {
+                new File(ConfigHandler.path).mkdir();
             }
-            catch (Exception e) {
-                e.printStackTrace();
-                start = false;
-            }
+            start = ConfigHandler.performInitialization(true); // Perform any necessary initialization
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            start = false;
         }
 
         if (start) {
