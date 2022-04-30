@@ -11,7 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.bukkit.Bukkit;
@@ -29,6 +28,7 @@ import net.coreprotect.consumer.Queue;
 import net.coreprotect.database.Database;
 import net.coreprotect.database.statement.UserStatement;
 import net.coreprotect.language.Phrase;
+import net.coreprotect.listener.ListenerHandler;
 import net.coreprotect.model.BlockGroup;
 import net.coreprotect.paper.PaperAdapter;
 import net.coreprotect.patch.Patch;
@@ -118,7 +118,7 @@ public class ConfigHandler extends Queue {
     public static Map<Integer, String> playerIdCacheReversed = syncMap();
     public static Map<String, List<Object>> lastRollback = syncMap();
     public static Map<String, Boolean> activeRollbacks = syncMap();
-    public static Map<UUID, Object[]> entityBlockMapper = syncMap();
+    public static Map<String, Object[]> entityBlockMapper = syncMap();
     public static ConcurrentHashMap<Long, Long> populatedChunks = new ConcurrentHashMap<>();
     public static ConcurrentHashMap<String, String> language = new ConcurrentHashMap<>();
     public static List<String> databaseTables = new ArrayList<>();
@@ -412,7 +412,7 @@ public class ConfigHandler extends Queue {
 
             ConfigHandler.loadConfig(); // Load (or create) the configuration file.
             ConfigHandler.loadDatabase(); // Initialize MySQL and create tables if necessary.
-
+            ListenerHandler.registerNetworking(); // Register channels for networking API
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -454,6 +454,16 @@ public class ConfigHandler extends Queue {
         }
 
         return false;
+    }
+
+    public static void performDisable() {
+        try {
+            Database.closeConnection();
+            ListenerHandler.unregisterNetworking(); // Unregister channels for networking API
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

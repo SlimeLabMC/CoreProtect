@@ -154,6 +154,8 @@ public class Language {
         phrases.put(Phrase.MISSING_ROLLBACK_RADIUS, "You did not specify a {rollback|restore} radius");
         phrases.put(Phrase.MISSING_ROLLBACK_USER, "You did not specify a {rollback|restore} user");
         phrases.put(Phrase.MYSQL_UNAVAILABLE, "Unable to connect to MySQL server");
+        phrases.put(Phrase.NETWORK_CONNECTION, "Connection by {0} {successful|failed}. Using {1} {2}.");
+        phrases.put(Phrase.NETWORK_TEST, "Network test data has been successful sent.");
         phrases.put(Phrase.NO_DATA, "該處沒有找到資料 {0}");
         phrases.put(Phrase.NO_DATA_LOCATION, "此處沒有找到任何{資料|記錄|互動|訊息} ");
         phrases.put(Phrase.NO_PERMISSION, "你沒有權限");

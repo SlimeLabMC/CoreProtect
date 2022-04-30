@@ -656,7 +656,7 @@ public class Util extends Queue {
         return artname;
     }
 
-    public static boolean setPlayerArmor(PlayerInventory inventory, ItemStack itemStack) {
+    public static int setPlayerArmor(PlayerInventory inventory, ItemStack itemStack) {
         String itemName = itemStack.getType().name();
         boolean isHelmet = (itemName.endsWith("_HELMET") || itemName.endsWith("_HEAD") || itemName.endsWith("_SKULL") || itemName.endsWith("_PUMPKIN"));
         boolean isChestplate = (itemName.endsWith("_CHESTPLATE"));
@@ -665,22 +665,22 @@ public class Util extends Queue {
 
         if (isHelmet && inventory.getHelmet() == null) {
             inventory.setHelmet(itemStack);
-            return true;
+            return 3;
         }
         else if (isChestplate && inventory.getChestplate() == null) {
             inventory.setChestplate(itemStack);
-            return true;
+            return 2;
         }
         else if (isLeggings && inventory.getLeggings() == null) {
             inventory.setLeggings(itemStack);
-            return true;
+            return 1;
         }
         else if (isBoots && inventory.getBoots() == null) {
             inventory.setBoots(itemStack);
-            return true;
+            return 0;
         }
 
-        return false;
+        return -1;
     }
 
     public static ItemStack[] getArmorStandContents(EntityEquipment equipment) {
@@ -1386,12 +1386,16 @@ public class Util extends Queue {
     }
 
     public static BlockData createBlockData(Material material) {
-        BlockData result = material.createBlockData();
-        if (result instanceof Waterlogged) {
-            ((Waterlogged) result).setWaterlogged(false);
+        try {
+            BlockData result = material.createBlockData();
+            if (result instanceof Waterlogged) {
+                ((Waterlogged) result).setWaterlogged(false);
+            }
+            return result;
         }
-
-        return result;
+        catch (Exception e) {
+            return null;
+        }
     }
 
     public static void prepareTypeAndData(Map<Block, BlockData> map, Block block, Material type, BlockData blockData, boolean update) {
@@ -1413,7 +1417,9 @@ public class Util extends Queue {
             blockData = createBlockData(type);
         }
 
-        block.setBlockData(blockData, update);
+        if (blockData != null) {
+            block.setBlockData(blockData, update);
+        }
     }
 
     public static boolean successfulQuery(Connection connection, String query) {
